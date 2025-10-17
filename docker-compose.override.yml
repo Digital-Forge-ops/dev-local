@@ -3,29 +3,29 @@ version: "3.4"
 services:
   api:
     build:
-      context: ${SALEOR_CORE_PATH}
+      context: ../core
       dockerfile: Dockerfile
     volumes:
-      - ${SALEOR_CORE_PATH}:/app:cached
+      - ../core:/app:cached
       - saleor-media:/app/media
     image: null
 
   worker:
     build:
-      context: ${SALEOR_CORE_PATH}
+      context: ../core
       dockerfile: Dockerfile
     command: celery -A saleor --app=saleor.celeryconf:app worker --loglevel=info -B
     volumes:
-      - ${SALEOR_CORE_PATH}:/app:cached
+      - ../core:/app:cached
       - saleor-media:/app/media
     image: null
 
   dashboard:
     build:
-      context: ${SALEOR_DASHBOARD_PATH}
+      context: ../dashboard
       dockerfile: Dockerfile
     volumes:
-      - ${SALEOR_DASHBOARD_PATH}:/app:cached
+      - ../dashboard:/app:cached
     ports:
       - 9000:80
     image: null

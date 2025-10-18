@@ -11,7 +11,7 @@ services:
     image: null
     environment:
       ALLOWED_HOSTS: localhost,127.0.0.1
-      CORS_ALLOWED_ORIGIN_REGEXES: http://localhost:9001
+      CORS_ALLOWED_ORIGIN_REGEXES: http://localhost:9000
 
   worker:
     build:
@@ -29,7 +29,7 @@ services:
     volumes:
       - ../dashboard:/app:cached
     ports:
-      - "9000:9000"
+      - "9000:80"
     command: sh -c "npm install && npm run dev"
     environment:
       VITE_API_URL: "http://localhost:8000/graphql/"

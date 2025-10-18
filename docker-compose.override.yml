@@ -21,12 +21,12 @@ services:
     image: null
 
   dashboard:
-    build:
-      context: ../dashboard
-      dockerfile: Dockerfile
-    volumes:
-      - ../dashboard:/app:cached
-    ports:
+  build:
+    context: ../dashboard
+    dockerfile: Dockerfile
+  volumes:
+    - ../dashboard:/app:cached
+  ports:
     - 9000:9000
   image: null
   command: yarn dev

@@ -29,3 +29,6 @@ services:
     ports:
       - 9000:80
     image: null
+    environment:
+      - API_URI=http://localhost:8000/graphql/
+      - APP_MOUNT_URI=/

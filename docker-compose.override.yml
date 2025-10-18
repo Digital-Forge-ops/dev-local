@@ -21,15 +21,15 @@ services:
     image: null
 
   dashboard:
-  build:
-    context: ../dashboard
-    dockerfile: Dockerfile
-  volumes:
-    - ../dashboard:/app:cached
-  ports:
-    - "9000:9000"
-  image: null
-  command: yarn dev
-  environment:
-    VITE_API_URL: http://localhost:8000/graphql/
-    PORT: "9000"
+    build:
+      context: ../dashboard
+      dockerfile: Dockerfile
+    volumes:
+      - ../dashboard:/app:cached
+    ports:
+      - "9000:9000"
+    image: null
+    command: yarn dev
+    environment:
+      VITE_API_URL: http://localhost:8000/graphql/
+      PORT: "9000"

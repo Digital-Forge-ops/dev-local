@@ -31,5 +31,5 @@ services:
   image: null
   command: yarn dev
   environment:
-    - PORT=9000
-    - VITE_API_URL=http://localhost:8000/graphql/
+    PORT: 9000
+    VITE_API_URL: http://localhost:8000/graphql/

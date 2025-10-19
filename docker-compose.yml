@@ -3,7 +3,6 @@ services:
     build:
       context: ../core
       dockerfile: Dockerfile
-    image: null
     ports:
       - 8000:8000
     restart: unless-stopped
@@ -79,7 +78,6 @@ services:
     volumes:
       - ../core:/app:cached
       - saleor-media:/app/media
-    image: null
 
   jaeger:
     image: jaegertracing/jaeger

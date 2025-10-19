@@ -27,6 +27,8 @@ services:
     ports:
       - 9001:9000
     restart: unless-stopped
+    environment:
+      - API_URL=127.0.0.1:8000/graphql/
 
   db:
     image: library/postgres:15-alpine

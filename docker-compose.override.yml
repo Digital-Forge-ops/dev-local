@@ -30,6 +30,7 @@ services:
       - "9001:9000"
     command: sh -c "npm install && npm run dev"
     environment:
+      API_URL: "127.0.0.1:8000/graphql/"
       VITE_API_URL: "http://localhost:8000/graphql/"
       APP_MOUNT_URI: /
       PORT: "9000"
